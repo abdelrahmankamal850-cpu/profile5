@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }body {
+  background: #0f172a;
+  color: #fff;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #020617;
+  position: sticky;
+  top: 0;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #38bdf8;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #38bdf8;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #020617;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #020617;
+  margin-top: 40px;
+  color: #94a3b8;
+}
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 جنب بعض */
+    gap: 20px;
+}
+
+.project-card {
+    width: 100%;
+    height: 250px; /* نفس الارتفاع لكل الكروت */
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يخلي الصور تتملى من غير ما تبوظ */
+    display: block;
+}
+/* Popup background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* الصورة المكبرة */
+.modal img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.project-card {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* الوضع الطبيعي */
+    transition: 2s ease;
+}
+
+/* عند الـ Hover */
+.project-card:hover img {
+    object-fit: contain; /* تظهر الصورة كاملة */
+    background-color: #000; /* خلفية لو في فراغ */
+}
+/* Full screen overlay */
+#fullscreen {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+}
+
+/* الصورة */
+#fullscreen img {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 10px;
+}
+.contactcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+}
+.contacttitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5rem;
+    gap: 20rem;
+}
+.contact h3, .contact a{
+    color: #eeeeee;
+    text-decoration: none;
+}
+.emailandphone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+footer {
+    color: #eeeeee;
+    padding: 2rem;
+    text-align: center;
+    
+}
+
+  </style>
+</head>
+<body> 
+    
+     <header>
+    <h1>MyPortfolio</h1>
+    <nav>
+      <a href="#Home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header> 
+   <section class="hero">
+    <h2>Hi, I'm a Graphic Designer</h2>
+    <p>I create modern and creative designs</p>
+   </section>
+   <section class="projects">
+        <h1>My Projects</h1>
+
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="grafic/New arrivals shoes social media post square banner red template design.jpeg" alt="Project 1">
+            </div>
+
+            <div class="project-card">
+                <img src="grafic/monster.png" alt="Project 2">
+            </div>
+
+            <div class="project-card">
+                <img src="grafic/Premium Vector _ Sport shoes for sale social media post and instagram feed template.jpeg" alt="Project 3">
+            </div>
+
+            <div class="project-card">
+                <img src="grafic/download.jpeg" alt="Project 4">
+            </div>
+
+            <div class="project-card">
+                <img src="grafic/Soical Media Ad Creative.jpeg" alt="Project 5">
+            </div>
+
+            <div class="project-card">
+                <img src="grafic/car.png" alt="Project 6">
+            </div>
+            <div class="project-card">
+                <img src="grafic/cafe.jpg" alt="Project 7">
+            </div>
+
+            <div class="project-card">
+                <img src="grafic/BOOKKkk.png" alt="Project 8">
+            </div>
+
+            <div class="project-card">
+                <img src="grafic/car234.png" alt="Project 9">
+            </div>
+        </div>
+    </section>
+    <section class="contactcontainer" id="contactme">
+   
+    <div class="contacttitle">
+        <h1 class="aboutname">contact</h1>
+        <h1 class="abouttitle">me</h1>
+    </div>
+    <div class="contact">
+        <div class="emailandphone">
+            <img src="project/assets/svg/Email.svg" alt="email logo">
+            <a href="abdelrahmankamal850@gmail.com">
+                <h3>abdelrahmankamal850@gmail.com</h3>
+            </a>
+        </div>
+        <div class="emailandphone">
+            <img src="project/assets/svg/phone.svg" alt="phone logo">
+            <h3>+201551573015</h3>
+            <a href="+201551573015"></a>
+        </div>
+    </div>
+ </section>
+    
+</body>
+</html>
